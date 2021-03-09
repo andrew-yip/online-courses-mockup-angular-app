@@ -8,19 +8,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
-import { CourseComponent } from './course/course.component';
+import { FormsModule } from '@angular/forms';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,
     CoursesComponent,
     AuthorsComponent,
     AutoGrowDirective,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [CoursesService, AuthorsService],
   bootstrap: [AppComponent]
