@@ -1,5 +1,8 @@
+import { AutoGrowDirective } from './auto-grow.directive';
+import { AuthorsComponent } from './../../../app2-authors/src/app/authors.component';
+import { AuthorsService } from './../../../app2-authors/src/app/authors.service';
 import { CoursesService } from './courses.service';
-import { NgModule } from '@angular/core';
+import { NgModule, Directive } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,12 +15,14 @@ import { CourseComponent } from './course/course.component';
     AppComponent,
     CourseComponent,
     CoursesComponent,
+    AuthorsComponent,
+    AutoGrowDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [CoursesService],
+  providers: [CoursesService, AuthorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
     selector: 'courses', // <courses> "courses"
     template: `
             <h2>{{ title }}</h2>
+            <input type="text" autoGrow />
             <ul>
                 <li *ngFor="let course of courses">
                     {{ course }}
