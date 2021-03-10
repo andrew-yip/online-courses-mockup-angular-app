@@ -2,3 +2,40 @@
 <courses></courses>
 <authors></authors>
 <contact-form></contact-form>
+<mat-checkbox #showDetails [checked]="isChecked" (change)="onChange($event)">
+    Show details... 
+</mat-checkbox>
+
+<div *ngIf="showDetails.checked">
+    Some random details for you
+</div>
+<div></div>
+
+
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group>
+
+  <div></div>
+
+  <mat-select [(ngModel)]="choice">
+      <mat-option *ngFor="let choice of choices" [value]="choice.id">
+        {{ choice.name }}
+      </mat-option>>
+  </mat-select>
+
+<div></div>
+
+<mat-form-field class="example-form-field">
+    <input
+    ngModel
+    #username="ngModel"
+    name="username"
+    type="text" matInput placeholder="Username" required>
+    <mat-hint>Type a unique username</mat-hint>
+    <span matSuffix>@domain.com</span>
+    <span matPrefix>admin.</span>
+    <mat-error *ngIf="username.invalid && username.errors?.required">Username field is required. </mat-error>
+
+</mat-form-field>
